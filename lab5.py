@@ -201,12 +201,8 @@ def check(n, m, interaction, quadratic_terms):
 
     x, y, x_norm = planing_matrix(n, m, interaction, quadratic_terms)
 
-    if interaction:
-        y_average = [round(sum(i) / len(i), 3) for i in y]
-        B = find_coef(x_norm, y_average, norm=interaction)
-    else:
-        y_average = [round(sum(i) / len(i), 2) for i in y]
-        B = find_coef(x, y_average, norm=interaction)
+    y_average = [round(sum(i) / len(i), 3) for i in y]
+    B = find_coef(x, y_average, norm=interaction)
 
     print('\nСереднє значення y:', y_average)
 
