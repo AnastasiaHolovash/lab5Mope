@@ -4,6 +4,7 @@ import sklearn.linear_model as lm
 from scipy.stats import f, t
 from prettytable import PrettyTable
 import math
+import time
 
 
 # Обчислення рівняння регрестї
@@ -293,4 +294,7 @@ if __name__ == '__main__':
     y_max = 200 + int(sum([x[1] for x in x_range]) / 3)
     y_min = 200 + int(sum([x[0] for x in x_range]) / 3)
 
-    main(8, 3)
+    start_time = time.time()
+    for _ in range(100):
+        main(8, 3)
+    print(f'\nСередній час виконання одного проходження програми: {((time.time() - start_time) / 100)} секунд')
